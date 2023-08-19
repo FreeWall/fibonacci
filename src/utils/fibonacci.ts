@@ -1,4 +1,4 @@
-export const fibonacciIndexLimit = 9999;
+export const fibonacciIndexLimit = 99999;
 
 export function getFibonacciNumberAt(index: number) {
   if (index > fibonacciIndexLimit) {

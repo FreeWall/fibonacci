@@ -1,4 +1,5 @@
 const { PHASE_DEVELOPMENT_SERVER } = require('next/constants.js');
+const { repository } = require('./package.json');
 
 /**
  * @template {import('next').NextConfig} T
@@ -19,6 +20,9 @@ module.exports = function next(stage) {
     productionBrowserSourceMaps: true,
     experimental: {
       fallbackNodePolyfills: false,
+    },
+    publicRuntimeConfig: {
+      repository,
     },
     webpack(config) {
       config.experiments.topLevelAwait = true;

@@ -26,6 +26,6 @@ describe('fibonacci', () => {
   });
 
   it('getFibonacciNumberAt limit', () => {
-    expect(() => getFibonacciNumberAt(10000)).toThrowError();
+    expect(() => getFibonacciNumberAt(123456)).toThrowError();
   });
 });

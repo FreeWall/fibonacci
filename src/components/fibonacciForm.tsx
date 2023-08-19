@@ -8,12 +8,12 @@ export default function FibonacciForm() {
   const [index, setIndex] = useState<number>();
   const indexInput = useRef<HTMLInputElement>(null);
 
-  const { data, error, isLoading } = trpc.fibonacci.numberAt.useQuery(
-    index ?? 0,
-    {
+  const { data, error, isInitialLoading, isRefetching } =
+    trpc.fibonacci.numberAt.useQuery(index ?? 0, {
       enabled: index !== undefined,
-    },
-  );
+    });
+
+  const isLoading = isInitialLoading || isRefetching;
 
   function submit() {
     const value = indexInput?.current?.value.trim();

@@ -17,7 +17,7 @@ export default function Index() {
         </a>
       </div>
       <div className="p-6 md:p-10">
-        <h1 className="text-3xl font-bold mb-8">
+        <h1 className="text-xl sm:text-3xl font-bold mb-8">
           <i>n</i>th Fibonacci number
         </h1>
         <FibonacciForm />

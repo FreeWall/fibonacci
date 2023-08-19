@@ -11,13 +11,13 @@ export default function Index() {
         <a
           href={publicRuntimeConfig?.repository}
           target="_blank"
-          className="text-body hover:text-white p-6 inline-block"
+          className="text-body hover:text-white p-6 sm:p-10 inline-block"
         >
-          <FaGithub size={32} />
+          <FaGithub className="w-7 h-7 sm:w-8 sm:h-8" />
         </a>
       </div>
-      <div className="p-6 md:p-10">
-        <h1 className="text-xl sm:text-3xl font-bold mb-8">
+      <div className="p-6 sm:p-10">
+        <h1 className="text-2xl sm:text-3xl font-bold mb-6 sm:mb-8">
           <i>n</i>th Fibonacci number
         </h1>
         <FibonacciForm />

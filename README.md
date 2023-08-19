@@ -1,6 +1,7 @@
 # Fibonacci app
 
 ![](https://wakatime.com/badge/user/d694f266-3f1b-44cd-82b9-e9c093472e23/project/f7cf69a2-8dec-499d-a3ff-096d60d1a7cc.svg)
+[![](https://img.shields.io/github/deployments/FreeWall/fibonacci/Production?logo=vercel&label=vercel)](https://fibonacci.michalvanek.cz/)
 
 > create a client/server application with the following functionality:
 >
@@ -18,4 +19,8 @@ cd fibonacci
 npm run deploy
 ```
 
-Visit http://localhost:3000/
+Server is started on port 3000, visit http://localhost:3000/
+
+### Vercel
+
+Project is also deployed on Vercel hosting: [fibonacci.michalvanek.cz](https://fibonacci.michalvanek.cz/)

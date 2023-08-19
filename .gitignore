@@ -5,6 +5,7 @@
 /.next
 /build
 next-env.d.ts
+/.swc
 
 # local env files
 .env

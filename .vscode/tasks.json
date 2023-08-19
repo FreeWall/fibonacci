@@ -3,6 +3,17 @@
   "tasks": [
     {
       "type": "npm",
+      "script": "test",
+      "problemMatcher": [],
+      "label": "test",
+      "detail": "Run application tests",
+      "icon": {
+        "id": "checklist",
+        "color": "terminal.ansiWhite"
+      }
+    },
+    {
+      "type": "npm",
       "script": "dev",
       "problemMatcher": [],
       "label": "dev",

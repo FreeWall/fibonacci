@@ -17,3 +17,5 @@ git clone https://github.com/FreeWall/fibonacci
 cd fibonacci
 npm run deploy
 ```
+
+Visit http://localhost:3000/

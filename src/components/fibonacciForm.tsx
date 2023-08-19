@@ -6,7 +6,9 @@ import { CgSpinner } from 'react-icons/cg';
 
 export default function FibonacciForm() {
   const [index, setIndex] = useState<number>();
+
   const indexInput = useRef<HTMLInputElement>(null);
+  const [inputError, setInputError] = useState(false);
 
   const { data, error, isInitialLoading, isRefetching } =
     trpc.fibonacci.numberAt.useQuery(index ?? 0, {
@@ -18,13 +20,17 @@ export default function FibonacciForm() {
   function submit() {
     const value = indexInput?.current?.value.trim();
     if (!value) {
+      indexInput.current?.focus();
+      setInputError(false);
       return;
     }
 
     if (!/^\d+$/.test(value)) {
+      setInputError(true);
       return;
     }
 
+    setInputError(false);
     setIndex(Number(value));
   }
 
@@ -37,13 +43,18 @@ export default function FibonacciForm() {
           placeholder={`0-${fibonacciIndexLimit}`}
           maxLength={fibonacciIndexLimit.toString().length}
           onKeyDown={(e) => e.key == 'Enter' && submit()}
-          className="bg-lighter p-4 mr-4 text-xl w-[140px] rounded outline-none font-semibold placeholder:text-[#858688]"
+          className={classNames(
+            'bg-lighter p-4 mr-4 text-xl w-[140px] border border-lighter rounded outline-none font-semibold placeholder:text-[#858688]',
+            {
+              'border-red-500': inputError,
+            },
+          )}
         />
         <div className="flex items-center">
           <button
             onClick={() => submit()}
             className={classNames(
-              'bg-conversion hover:bg-conversionHover p-4 text-white text-lg font-bold px-4 flex items-center rounded relative transition-[padding] duration-300',
+              'bg-conversion hover:bg-conversionHover border-conversion hover:border-conversionHover p-4 text-white text-lg font-bold px-4 flex items-center rounded relative transition-[padding] duration-300',
               {
                 'pointer-events-none opacity-70 bg-conversionHover pr-12':
                   isLoading,
@@ -70,8 +81,8 @@ export default function FibonacciForm() {
             className={classNames(
               'bg-darker inline-block max-w-full p-4 rounded break-words',
               {
-                'text-sm': data?.number.length > 5000,
-                'text-xs': data?.number.length > 8000,
+                'text-sm': data?.number.length > 3000,
+                'text-xs': data?.number.length > 6000,
               },
             )}
           >

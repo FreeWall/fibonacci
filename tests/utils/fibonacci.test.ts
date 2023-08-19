@@ -1,4 +1,4 @@
-import { getFibonacciNumberAt } from '@/utils/fibonacci';
+import { fibonacciIndexLimit, getFibonacciNumberAt } from '@/utils/fibonacci';
 
 describe('fibonacci', () => {
   it.each([
@@ -26,6 +26,6 @@ describe('fibonacci', () => {
   });
 
   it('getFibonacciNumberAt limit', () => {
-    expect(() => getFibonacciNumberAt(123456)).toThrowError();
+    expect(() => getFibonacciNumberAt(fibonacciIndexLimit + 1)).toThrowError();
   });
 });

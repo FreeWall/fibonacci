@@ -24,3 +24,5 @@ Server is started on port 3000, visit http://localhost:3000/
 ### Vercel
 
 Project is also deployed on Vercel hosting: [fibonacci.michalvanek.cz](https://fibonacci.michalvanek.cz/)
+
+Vercel has 10s request execution timeout apparently, so anything above ~ 500 000 is failing. This could be solved by precomputing starting numbers by every 100 000 into a separate DB (e.g. SQLite) in build time, so that there is no need to compute hundreds of thousands of numbers everytime.

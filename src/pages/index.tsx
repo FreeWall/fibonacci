@@ -38,6 +38,4 @@ export default function Index() {
       {error && <div>{error.message}</div>}
     </div>
   );
-
-  return <>{data?.number}</>;
 }
